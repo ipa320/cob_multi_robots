@@ -1,0 +1,17 @@
+### see "rocon_multimaster/rocon_gateway/param/default.yaml" for an extensive example
+### https://github.com/robotics-in-concert/rocon_multimaster/blob/develop/rocon_gateway/param/default.yaml
+
+# Connections to advertise by default (watched for from startup). Can use python regex patterns to full effect for these.
+default_advertisements:
+   - name: /slam_server/map_download
+     node: None
+     type: service
+   - name: /slam_server/robot_turn_off
+     node: None
+     type: service
+   - name: /slam_server/request_pose
+     node: None
+     type: service
+   - name: /slam_server/init_robot
+     node: None
+     type: service

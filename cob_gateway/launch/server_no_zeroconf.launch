@@ -1,0 +1,31 @@
+<?xml version="1.0"?>
+<launch>
+
+	<!-- define arguments -->
+	<arg name="hub_name" default="Server_Hub"/>
+	<arg name="zeroconf" default="false"/>
+	<arg name="gateway_name" default="Server_Gateway"/>
+	<arg name="gateway_hub_uri" default="http://localhost:6380"/>
+	<arg name="gateway_hub_whitelist" default="$(arg hub_name)"/>
+	<arg name="gateway_firewall" default="false"/>
+	<arg name="gateway_disable_zeroconf" default="true"/>
+	<arg name="gateway_custom_rules_file" default="$(find cob_gateway)/param/server.yaml"/>
+
+
+	<!-- startup hub -->
+	<include file="$(find rocon_hub)/launch/hub.launch">
+		<arg name="hub_name" value="$(arg hub_name)"/>
+		<arg name="zeroconf" value="$(arg zeroconf)"/>
+	</include>
+
+	<!-- startup gateway -->
+	<include file="$(find rocon_gateway)/launch/gateway.launch">
+		<arg name="gateway_name" value="$(arg gateway_name)"/>
+		<arg name="gateway_hub_uri" value="$(arg gateway_hub_uri)"/>
+		<arg name="gateway_hub_whitelist" value="$(arg gateway_hub_whitelist)"/>
+		<arg name="gateway_firewall" value="$(arg gateway_firewall)"/>
+		<arg name="gateway_disable_zeroconf" value="$(arg gateway_disable_zeroconf)"/>
+		<arg name="gateway_custom_rules_file" value="$(arg gateway_custom_rules_file)"/>
+	</include>
+
+</launch>
