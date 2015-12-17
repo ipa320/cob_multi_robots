@@ -1,0 +1,25 @@
+### see "rocon_multimaster/rocon_gateway/param/default.yaml" for an extensive example
+### https://github.com/robotics-in-concert/rocon_multimaster/blob/develop/rocon_gateway/param/default.yaml
+
+# Connections to flip by default (watched for from startup). Can use python regex patterns to full effect for these.
+default_flips:
+   - gateway: Server_Gateway
+     rule:
+       name: /pose
+       node: None
+       type: publisher
+   - gateway: Server_Gateway
+     rule:
+       name: .*map_upstream
+       node: None
+       type: service
+
+# Connections to pull by default (watched for from startup). Can use python regex patterns to full effect for these.
+# Also possible to pull everything from Server_Gateway.
+default_pulls:
+   - gateway: Server_Gateway 
+     rule:
+       name: /slam_server.*
+       node: None
+       type: service
+       
