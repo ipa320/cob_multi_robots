@@ -1,0 +1,16 @@
+<package>
+  <name>cob_rocon_multimaster</name>
+  <description>This package contains configuration and launch files for enabling the use of multimaster setups based on the rocon_multimaster framework. package</description>
+  <version>0.1.0</version>
+  <maintainer email="srd@ipa.fraunhofer.de">Stefan Dörr</maintainer>
+  <author email="srd-fg@ipa.fraunhofer.de">srd-fg</author>
+  <license>Fraunhofer IPA</license>
+  <url></url>
+
+  <buildtool_depend>catkin</buildtool_depend>
+
+  <run_depend>rocon_hub</run_depend>
+  <run_depend>rocon_gateway</run_depend>
+  <run_depend>zeroconf_avahi</run_depend>
+
+</package>

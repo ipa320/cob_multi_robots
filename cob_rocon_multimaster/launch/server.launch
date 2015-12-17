@@ -6,15 +6,15 @@
 	<arg name="gateway_name" default="Server_Gateway"/>
 	<arg name="gateway_hub_whitelist" default="$(arg hub_name)"/>
 	<arg name="gateway_firewall" default="false"/>
-	<arg name="gateway_custom_rules_file" default="$(find cob_gateway)/param/server.yaml"/>
+	<arg name="gateway_custom_rules_file" default="$(find cob_rocon_multimaster)/param/serverslam/server.yaml"/>
 
 
-	<!-- startup hub -->
+	<!-- startup rocon hub -->
 	<include file="$(find rocon_hub)/launch/hub.launch">
 		<arg name="hub_name" value="$(arg hub_name)"/>
 	</include>
 
-	<!-- startup gateway -->
+	<!-- startup rocon gateway -->
 	<include file="$(find rocon_gateway)/launch/gateway.launch">
 		<arg name="gateway_name" value="$(arg gateway_name)"/>
 		<arg name="gateway_hub_whitelist" value="$(arg gateway_hub_whitelist)"/>

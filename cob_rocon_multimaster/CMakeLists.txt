@@ -1,8 +1,7 @@
 cmake_minimum_required(VERSION 2.8.3)
-project(cob_gateway)
+project(cob_rocon_multimaster)
 
-find_package(catkin REQUIRED COMPONENTS)
-
+find_package(catkin REQUIRED)
 catkin_package()
 
 ### INSTALL ###
